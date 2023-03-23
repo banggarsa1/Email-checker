@@ -17,6 +17,7 @@ emailArray.forEach(email => {
     verifyEmail(email.trim());
   } else {
     invalidEmails.push(email.trim());
+    fs.appendFileSync('invalid.txt', email.trim() + '\n');
   }
 });
 
