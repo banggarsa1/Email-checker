@@ -25,7 +25,6 @@ function verifyEmail(email) {
     .then(response => {
       const data = response.data.data;
       if (data.result === 'deliverable') {
-        console.log(`\x1b[32mValid emails: ${email}`);
         validEmails.push(email);
         fs.appendFileSync('deliverable.txt', email + '\n');
     } else if (data.result === 'undeliverable') {
@@ -44,4 +43,4 @@ function verifyEmail(email) {
   });
 }
 
-console.log(`\x1b[32mValid emails: ${validEmails.join('\n')}`);
+// console.log(`\x1b[32mValid emails: ${validEmails.join('\n')}`);
